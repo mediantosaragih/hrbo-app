@@ -12,9 +12,15 @@
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Attendance</title>
 
+<<<<<<< Updated upstream
         <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
         <meta name="robots"
               content="noindex">
+=======
+<div class="row">
+    Ini Halaman Attendance
+</div>
+>>>>>>> Stashed changes
 
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500%7CRoboto:400,500&amp;display=swap"
