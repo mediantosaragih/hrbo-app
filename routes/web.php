@@ -15,35 +15,7 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 */
 
 Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/employee', function () {
-    return view('employee');
-});
-
-Route::get('/roster', function () {
-    return view('roster');
-});
-
-Route::get('/attendance', function () {
-    return view('attendance');
-});
-
-Route::get('/overtime', function () {
-    return view('overtime');
-});
-
-Route::get('/compensation', function () {
-    return view('compensation');
-});
-
-Route::get('/remuneration', function () {
-    return view('remuneration');
-});
-
-Route::get('/performance', function () {
-    return view('performance');
+    return view('auth/login');
 });
 
 Route::controller(LoginRegisterController::class)->group(function() {
@@ -51,6 +23,38 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
-    Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
 });
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/employee', function () {
+        return view('employee');
+    })->name('employee');
+
+    Route::get('/roster', function () {
+        return view('roster');
+    })->name('roster');
+
+    Route::get('/attendance', function () {
+        return view('attendance');
+    })->name('attendence');
+
+    Route::get('/overtime', function () {
+        return view('overtime');
+    })->name('overtime');
+
+    Route::get('/compensation', function () {
+        return view('compensation');
+    })->name('compensation');
+
+    Route::get('/remuneration', function () {
+        return view('remuneration');
+    })->name('remuneration');;
+
+    Route::get('/performance', function () {
+        return view('performance');
+    })->name('performance');
+});
+
