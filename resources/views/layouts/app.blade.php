@@ -10,7 +10,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Dashboard</title>
+        <title>@yield('title')</title>
 
         <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
         <meta name="robots"
@@ -159,10 +159,10 @@
                         <div class="container-fluid page__container">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">@yield('title')</li>
                             </ol>
-                            <h1 class="h2">Dashboard</h1>
-                            <div class="row">
+                            <h1 class="h2">@yield('title')</h1>
+                            <div class="row-mb-7">
 
                             @yield('content')
 

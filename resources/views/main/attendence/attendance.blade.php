@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Attendance')
+
 @section('content')
 
 <div class="row">
-sfkksadmaskdm
+Ini Halaman Attendance
 </div>
 
 @stop

@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Overtime')
+
 @section('content')
 
 <div class="row">
-sfkksadmaskdm
+Ini Halaman Overtime
 </div>
 
 @stop

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginRegisterController extends Controller
 {
@@ -123,4 +124,31 @@ class LoginRegisterController extends Controller
         return redirect()->route('login')
             ->withSuccess('You have logged out successfully!');;
     }  
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        $googleUser = Socialite::driver('google')->user();
+
+        // Proses pendaftaran atau login pengguna di sini
+        // $googleUser->getId();
+        // $googleUser->getEmail();
+        // $googleUser->getName();
+        // ...
+
+        // Contoh: Registrasi pengguna jika belum terdaftar
+        $user = User::firstOrCreate(
+            ['email' => $googleUser->getEmail()],
+            ['name' => $googleUser->getName(), 'password' => bcrypt(str_random(16))]
+        );
+
+        Auth::login($user, true);
+
+        return redirect()->route('dashboard')
+        ->withSuccess('You have successfully registered & logged in!');
+    }
 }

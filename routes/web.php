@@ -25,36 +25,43 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/authenticate', 'authenticate')->name('authenticate');
     Route::post('/logout', 'logout')->name('logout');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/login/google', 'redirectToGoogle')->name('redirectToGoogle');
+    Route::get('/login/google/callback', 'handleGoogleCallback')->name('handleGoogleCallback');
+
 });
 
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/employee', function () {
-        return view('employee');
+        return view('main/employee/employee');
     })->name('employee');
 
+    Route::get('/tambah_data', function () {
+        return view('main/employee/tambah_data');
+    })->name('tambah_data');
+
     Route::get('/roster', function () {
-        return view('roster');
+        return view('main/roster/roster');
     })->name('roster');
 
     Route::get('/attendance', function () {
-        return view('attendance');
+        return view('main/attendance/attendance');
     })->name('attendence');
 
     Route::get('/overtime', function () {
-        return view('overtime');
+        return view('main/overtime/overtime');
     })->name('overtime');
 
     Route::get('/compensation', function () {
-        return view('compensation');
+        return view('main/compensation/compensation');
     })->name('compensation');
 
     Route::get('/remuneration', function () {
-        return view('remuneration');
+        return view('main/remuneration/remuneration');
     })->name('remuneration');;
 
     Route::get('/performance', function () {
-        return view('performance');
+        return view('main/performance/performance');
     })->name('performance');
 });
 
