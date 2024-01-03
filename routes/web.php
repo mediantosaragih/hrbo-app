@@ -32,9 +32,17 @@ Route::controller(LoginRegisterController::class)->group(function() {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/employee', function () {
-        return view('main/employee/employee');
-    })->name('employee');
+    // Route::get('/employee', function () {
+    //     return view('main/employee/employee');
+    // })->name('employee');
+
+    Route::get('/employee', 'App\Http\Controllers\EmployeeController@DataKaryawan')->name('employee');
+    Route::post('/PostTambahDataKaryawan', 'App\Http\Controllers\EmployeeController@PostTambahDataKaryawan')->name('PostTambahDataKaryawan');
+    // Route::get('/detail_data/{general_karyawan_id}', 'App\Http\Controllers\EmployeeController@DetailDataKaryawan');
+
+    Route::get('/detail_data', function () {
+        return view('main/employee/detail_data');
+    })->name('detail_data');
 
     Route::get('/tambah_data', function () {
         return view('main/employee/tambah_data');

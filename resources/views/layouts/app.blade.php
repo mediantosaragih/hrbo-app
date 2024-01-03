@@ -44,6 +44,10 @@
         <link type="text/css"
               href="assets/css/app.css"
               rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link type="text/css"
+              href="assets/css/bootstrap.css"
+              rel="stylesheet">
 
     </head>
 

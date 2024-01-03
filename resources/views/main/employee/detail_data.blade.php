@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah Data')
+@section('title', 'Detail Karyawan')
 
 @section('content')
 
@@ -14,7 +14,7 @@
                         <h4 class="card-title">Karyawan</h4>
                     </div>
                     <div class="card-body">
-                        <form action="./PostTambahDataKaryawan" method="post">
+                        <form action="#" method="post">
                         @csrf
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label form-label">NO ID KARYAWAN</label>
