@@ -17,6 +17,9 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 Route::get('/', function () {
     return view('auth/login');
 });
+Route::get('/dashboardd', function () {
+    return view('dashboardd');
+});
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
@@ -47,6 +50,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tambah_data', function () {
         return view('main/employee/tambah_data');
     })->name('tambah_data');
+
+    Route::get('/divisi', 'App\Http\Controllers\DivisiController@DataDivisi')->name('divisi');
+
+    Route::get('/sallary', 'App\Http\Controllers\SallaryController@DataSallary')->name('sallary');
 
     Route::get('/roster', function () {
         return view('main/roster/roster');

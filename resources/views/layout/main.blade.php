@@ -112,35 +112,35 @@
                   <ul class="sidebar-menu sm-active-button-bg">
                     <li class="sidebar-menu-item active">
                       <a class="sidebar-menu-button" href="#">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_box</i> Home </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">home</i> Home </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./employee">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Employee </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person</i> Employee </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./roster">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Roster </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">schedule</i> Roster </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./attendance">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Attendance </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">access_time</i> Attendance </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./overtime">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Overtime </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">schedule</i> Overtime </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./compensation">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Compensation & Benefits </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">attach_money</i> Compensation & Benefits </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./remuneration">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Company Remuneration </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">attach_money</i> Company Remuneration </a>
                     </li>
                     <li class="sidebar-menu-item ">
                       <a class="sidebar-menu-button" href="./performance">
-                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> Employee Performance </a>
+                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">assessment</i> Employee Performance </a>
                     </li>
                   </ul>
                 </div>
