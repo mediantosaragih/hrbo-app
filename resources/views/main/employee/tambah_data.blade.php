@@ -1,4 +1,4 @@
-@extends('layouts.aps')
+@extends('layouts.main')
 
 @section('title', 'Tambah Data')
 
