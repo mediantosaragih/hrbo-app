@@ -3,7 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<div class="container-fluid px-4">
+
+
+
+<!-- <div class="container-fluid px-4">
     <h2 class="mt-4">Dashboard</h2>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -60,5 +63,5 @@
                 </div>
             </div>
         </div>
-</div>
+</div> -->
 @endsection

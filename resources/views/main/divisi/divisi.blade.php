@@ -31,9 +31,6 @@
                         @foreach($data_divisi as $divisi)
                             <tr style="">
                                 <td>{{$loop->iteration}}</td>
-                                    <td>
-                                        <span class="js-lists-values-general-karyawan-id">{{$divisi->divisi_id}}</span>
-                                    </td>
                                     <td style="">
                                         <span class="js-lists-values-nama">{{$divisi->name_divisi}}</span>
                                     </td>
