@@ -14,9 +14,9 @@ class SallaryController extends Controller
     //
 
     public function DataSallary(){
-        $data_karyawan = DB::table('general')->orderBy('general_karyawan_id', 'asc')->get();
+        $data_sallary = DB::table('general_sallary')->orderBy('id', 'asc')->get();
 
-        return view('main/sallary/sallary', ['data_karyawan' => $data_karyawan]);
+        return view('main/sallary/sallary', ['data_sallary' => $data_sallary]);
     }
 
     public function PostTambahDataKaryawan(Request $request){

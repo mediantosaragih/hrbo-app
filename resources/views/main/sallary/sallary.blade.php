@@ -22,15 +22,51 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama </th>
+                                <th>Nama Karyawan</th>
                                 <th>Departemen</th>
-                                <th>Jabatan</th>
-                                <th>Gaji</th>
+                                <th>Jenis Slip Gaji</th>
+                                <th>Gaji Pokok</th>
+                                <th>Net Sallary</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                        @foreach($data_sallary as $sallary)
+                            <tr style="">
+                                <td>{{$loop->iteration}}</td>
+                                    <td>
+                                        <span class="js-lists-values-general-karyawan-id">{{$sallary->nama_karyawan}}</span>
+                                    </td>
+                                    <td style="">
+                                        <span class="js-lists-values-nama">{{$sallary->departemen}}</span>
+                                    </td>
+                                    <td style="">
+                                        <span class="js-lists-values-email">{{$sallary->jenis_slip_gaji}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="js-lists-values-no-hp">{{$sallary->gaji_pokok}}</span>
+                                    </td>
+                                    <td style="">
+                                        <span class="js-lists-values-department">{{$sallary->net_sallary}}</span>
+                                    </td>
+                                    <td style="">
+                                        <span class="js-lists-values-jabatan">{{$sallary->status}}</span>
+                                    </td>
+                                    <td style="width: 10px;" align="center" >
+                                        <a href="">
+                                        <span class="icon">
+                                            <i class="fas fa-pencil-alt"></i> <!-- Icon pensil (pencil) -->
+                                        </span>
+                                        </a>
+                                        <a href="">
+                                            <span class="icon">
+                                                <i class="fas fa-trash-alt"></i> <!-- Icon tong sampah (trash) -->
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
