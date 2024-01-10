@@ -1,126 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< Updated upstream
-<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title> Responsive Sidebar Menu  | CodingLab </title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">CodingLab</div>
-        <i class='bx bx-menu' id="btn" ></i>
-    </div>
-    <ul class="nav-list">
-      <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
-      </li>
-      <li>
-       <a href="#">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">User</span>
-       </a>
-       <span class="tooltip">User</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
-       </a>
-       <span class="tooltip">Messages</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Analytics</span>
-       </a>
-       <span class="tooltip">Analytics</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-folder' ></i>
-         <span class="links_name">File Manager</span>
-       </a>
-       <span class="tooltip">Files</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
-       </a>
-       <span class="tooltip">Order</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">Saved</span>
-       </a>
-       <span class="tooltip">Saved</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg">
-           <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
-           </div>
-         </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
-    </ul>
-  </div>
-  <section class="home-section">
-      <div class="text">Dashboard</div>
-  </section>
-  <script>
-  let sidebar = document.querySelector(".sidebar");
-  let closeBtn = document.querySelector("#btn");
-  let searchBtn = document.querySelector(".bx-search");
-
-  closeBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("open");
-    menuBtnChange();//calling the function(optional)
-  });
-
-  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-    sidebar.classList.toggle("open");
-    menuBtnChange(); //calling the function(optional)
-  });
-
-  // following are the code to change sidebar button(optional)
-  function menuBtnChange() {
-   if(sidebar.classList.contains("open")){
-     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-   }else {
-     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
-   }
-  }
-  </script>
-</body>
-</html>
-=======
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -129,15 +7,14 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <link type="text/css" href="assets/css/styles.css" rel="stylesheet">
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="assets/css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="dashboard">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="dashboard">HRIS - APP</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -166,72 +43,83 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="dashboard">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
+                                Master Data
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <a class="nav-link" href="{{ route('employee') }}">Data Employe</a>
+                                    <a class="nav-link" href="{{ route('divisi') }}">Data Divisi</a>
+                                    <a class="nav-link" href="{{ route('sallary') }}">Data Gaji</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsd" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-calendar"></i></div>
+                                Data Jadwal
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
+                            <div class="collapse" id="collapseLayoutsd" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Roster</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Lembur</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Cuti</a>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#absensi" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                                Data Absensi
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                            <div class="collapse" id="absensi" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Kehadiran Hari ini</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Kehadiran</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Cuti/Izin</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#absensi" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                                Data Lemburan
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                        </div>
+                            <div class="collapse" id="absensi" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Jumlah Harga Lembur</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Data Lembur</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#benefit" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-money-check"></i></div>
+                                Compensation dan Benefit
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="benefit" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Gaji </a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Tunjangan</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Asuransi</a>
+                                </nav>
+                            </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <!-- <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
-                    </div>
+                    </div> -->
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+            <main>
+            <div class="container-fluid px-4">
+            @yield('content')    
+            </div>
+            </main>
+                <!-- <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
@@ -784,11 +672,11 @@
                             </div>
                         </div>
                     </div>
-                </main>
+                </main> -->
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -799,13 +687,12 @@
                 </footer>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
->>>>>>> Stashed changes

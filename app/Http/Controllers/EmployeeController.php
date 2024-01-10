@@ -6,7 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 
+use App\Http\Imports\DataKaryawanImport;
+
+
 use App\Models\Employee;
+
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class EmployeeController extends Controller
@@ -84,4 +89,11 @@ class EmployeeController extends Controller
         
         return view('main/employee/detail_data')->with('detail_karyawan', $detail_karyawan);
     }
+
+    public function DataKaryawanImportExcel(Request $request) 
+	{ 
+		Excel::import(new DataKaryawanImport, $request->file('file_excel_data_karyawan'), null, \Maatwebsite\Excel\Excel::XLSX);
+
+		return redirect('employee');
+	}
 }

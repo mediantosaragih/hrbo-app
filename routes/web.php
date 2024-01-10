@@ -40,6 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/PostTambahDataKaryawan', 'App\Http\Controllers\EmployeeController@PostTambahDataKaryawan')->name('PostTambahDataKaryawan');
     // Route::get('/detail_data/{general_karyawan_id}', 'App\Http\Controllers\EmployeeController@DetailDataKaryawan');
 
+    Route::post('/tambah_data/import_excel', 'App\Http\Controllers\EmployeeController@DataKaryawanImportExcel');
+
     Route::get('/detail_data', function () {
         return view('main/employee/detail_data');
     })->name('detail_data');
