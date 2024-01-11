@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
-use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\DivisiControllers;
 use App\Http\Controllers\RosterController;
 
 /*
@@ -45,6 +45,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/PostTambahDataKaryawan', 'App\Http\Controllers\EmployeeController@PostTambahDataKaryawan')->name('PostTambahDataKaryawan');
     // Route::get('/detail_data/{general_karyawan_id}', 'App\Http\Controllers\EmployeeController@DetailDataKaryawan');
 
+    Route::post('/tambah_data/import_excel', 'App\Http\Controllers\EmployeeController@DataKaryawanImportExcel');
+
+    Route::get('/detail_data/{general_karyawan_id}', 'App\Http\Controllers\EmployeeController@DetailDataKaryawan');
+    Route::post('/PostEditDataKaryawan', 'App\Http\Controllers\EmployeeController@PostEditDataKaryawan')->name('PostEditDataKaryawan');
+    Route::get('/hapus_data_karyawan/{general_karyawan_id}', 'App\Http\Controllers\EmployeeController@HapusDataKaryawan');
+
     Route::get('/detail_data', function () {
         return view('main/employee/detail_data');
     })->name('detail_data');
@@ -56,12 +62,16 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/divisi', 'App\Http\Controllers\DivisiController@index')->name('divisi');
     // Route::post('/create', 'App\Http\Controllers\DivisiController@Create')->name('divisi.create');
 
-    Route::get('divisi', [DivisiController::class, 'index'])->name('divisi');
-    Route::get('divisi/create', [DivisiController::class, 'create'])->name('divisi.create');
-    Route::post('divisi', [DivisiController::class, 'store'])->name('divisi.store');
-    Route::get('divisi/{id}/edit', [DivisiController::class, 'edit'])->name('divisi.edit');
-    Route::put('divisi/{id}', [DivisiController::class, 'update'])->name('divisi.update');
-    Route::delete('divisi/{id}', [DivisiController::class, 'destroy'])->name('divisi.destroy');
+    Route::get('divisi', [DivisiControllers::class, 'index'])->name('divisi');
+    Route::post('divisi/tambah_divisi', [DivisiControllers::class, 'tambahDivisi'])->name('PosttambahDivisi');
+    Route::get('/divisi/tambah_divisi', function () {
+        return view('main/divisi/create');
+    })->name('tambahDivisi');
+    // Route::post('/divisi/tambah_divisi', 'App\Http\Controllers\DivisiControllers@tambahDivisi')->name('PosttambahDivisi');
+    Route::post('divisi', [DivisiControllers::class, 'store'])->name('divisi.store');
+    Route::get('/detail/{name_divisi}', [DivisiControllers::class, 'edit'])->name('divisi.edit');
+    Route::put('divisi/{id}', [DivisiControllers::class, 'update'])->name('divisi.update');
+    Route::delete('divisi/{id}', [DivisiControllers::class, 'destroy'])->name('divisi.destroy');
 
     Route::get('/sallary', 'App\Http\Controllers\SallaryController@DataSallary')->name('sallary');
 
@@ -72,13 +82,22 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/roster/{id}/resize', [RosterController::class, 'resize']);
     Route::get('/events/search', [RosterController::class, 'search']);
 
-    Route::get('/attendance', function () {
-        return view('main/attendance/attendance');
-    })->name('attendence');
+    Route::get('/kehadiran_hari_ini', function () {
+        return view('main/attendance/kehadiran_hari_ini');
+    })->name('kehadiran_hari_ini');
+    Route::get('/kehadiran', function () {
+        return view('main/attendance/kehadiran');
+    })->name('kehadiran');
+    Route::get('/cuti_izin', function () {
+        return view('main/attendance/cuti_izin');
+    })->name('cuti_izin');
 
-    Route::get('/overtime', function () {
-        return view('main/overtime/overtime');
-    })->name('overtime');
+    Route::get('/jumlah_harga_lembur', function () {
+        return view('main/overtime/jumlah_harga_lembur');
+    })->name('jumlah_harga_lembur');
+    Route::get('/data_lembur', function () {
+        return view('main/overtime/data_lembur');
+    })->name('data_lembur');
 
     Route::get('/compensation', function () {
         return view('main/compensation/compensation');

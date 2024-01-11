@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard</h1>
+                    <h1 class="m-0">Employee</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+                        <li class="breadcrumb-item active">Employee</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,10 +26,12 @@
             <div class="card shadow mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header mb-2">
-                        <i class="fas fa-table me-1"></i>
-                            DataTable Example
                         <div class="">
                             <a href="{{ route('tambah_data') }}" class="btn btn-success">Tambah Data</a>
+                            <a style="color:white">|</a>
+                            <a class="btn btn-success" data-toggle="modal" data-target="#ImportExcel" class="btn btn-outline-secondary">Import Data</a> 
+                            <a style="color:white">|</a>
+                            <a href="{{ route('tambah_data') }}" class="btn btn-success">Export Data</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -70,12 +72,12 @@
                                                 <span class="js-lists-values-jabatan">{{$karyawan->general_riwayat_jabatan}}</span>
                                             </td>
                                             <td style="width: 10px;" align="center" >
-                                                <a href="">
-                                                <span class="icon">
-                                                    <i class="fas fa-pencil-alt"></i> <!-- Icon pensil (pencil) -->
-                                                </span>
+                                                <a href="./detail_data/{{$karyawan->general_karyawan_id}}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-pencil-alt"></i> <!-- Icon pensil (pencil) -->
+                                                    </span>
                                                 </a>
-                                                <a href="">
+                                                <a href="./hapus_data_karyawan/{{$karyawan->general_karyawan_id}}">
                                                     <span class="icon">
                                                         <i class="fas fa-trash-alt"></i> <!-- Icon tong sampah (trash) -->
                                                     </span>
@@ -92,4 +94,41 @@
         </div>
     </section>
 </div>
+@stop
+
+@section('importExel')
+        <div class="modal fade" id="ImportExcel">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h4 class="modal-title text-white">Import Excel</h4>
+                        <button type="button"
+                                class="close text-white"
+                                data-dismiss="modal"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="./tambah_data/import_excel" method="post" enctype="multipart/form-data">
+                        @csrf
+                            <div class="form-group row">
+                                <label for="qtitle" class="col-form-label form-label col-md-3">Pilih File Excel</label>
+                                <div class="col-md-9">
+                                    <div class="custom-file">
+                                        <input name="file_excel_data_karyawan" type="file" id="file_excel" class="custom-file-input" accept=".xlsx" required>
+                                        <label for="file_excel" class="custom-file-label">Pilih FIle</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-3">
+                                    <button type="submit" class="btn btn-success">Import</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 @stop

@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#6777ef" />
     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>HRIS</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -42,10 +42,10 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
                 width="60">
-        </div>
+        </div> -->
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -64,8 +64,7 @@
             </ul>
 
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
+            <!-- <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
@@ -86,17 +85,16 @@
                             </div>
                         </form>
                     </div>
-                </li>
+                </li> -->
 
                 <!-- Messages Dropdown Menu -->
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-comments"></i>
                         <span class="badge badge-danger navbar-badge">3</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
                             <div class="media">
                                 <img src="dist/img/user1-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
@@ -109,11 +107,9 @@
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                 </div>
                             </div>
-                            <!-- Message End -->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
                             <div class="media">
                                 <img src="dist/img/user8-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
@@ -127,11 +123,9 @@
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                 </div>
                             </div>
-                            <!-- Message End -->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
                             <div class="media">
                                 <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
@@ -145,14 +139,13 @@
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                                 </div>
                             </div>
-                            <!-- Message End -->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                     </div>
-                </li>
+                </li> -->
                 <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
                         <span class="badge badge-warning navbar-badge">15</span>
@@ -188,18 +181,18 @@
                         href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
-                </li>
-            </ul>
+                </li> -->
+            <!-- </ul> -->
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="{{route('dashboard')}}" class="brand-link">
                 <img src="{{ asset('lte/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">HRIS</span>
             </a>
 
             <!-- Sidebar -->
@@ -210,7 +203,7 @@
                         <img src="{{asset('lte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{auth()->user()->name}}</a>
                     </div>
                 </div>
 
@@ -242,7 +235,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-database"></i>
                             <p>
                                 Master Data
                                 <i class="right fas fa-angle-left"></i>
@@ -251,19 +244,19 @@
                             <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('employee') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-user nav-icon"></i>
                                 <p>Data Employe</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('divisi') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-id-badge nav-icon"></i>
                                 <p>Data Divisi</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('sallary') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-hourglass nav-icon"></i>
                                 <p>Data Gaji</p>
                                 </a>
                             </li>
@@ -277,9 +270,90 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-calendar"></i>
                             <p>
-                                Jadwal
+                                Roster
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('roster') }}" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Roster</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index3.html" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Lembur</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index3.html" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Cuti</p>
+                                </a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-clock"></i>
+                            <p>
+                                Attendance
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('kehadiran_hari_ini') }}" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Kehadiran Hari Ini</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('kehadiran') }}" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Kehadiran</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('cuti_izin') }}" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Cuti/Izin</p>
+                                </a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-history"></i>
+                            <p>
+                                Overtime
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('jumlah_harga_lembur') }}" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Jumlah Harga Lembur</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('data_lembur') }}" class="nav-link">
+                                <i class="far fa-edit nav-icon"></i>
+                                <p>Data Lembur</p>
+                                </a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-balance-scale"></i>
+                            <p>
+                                Compensation & Benefits
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                             </a>
@@ -287,22 +361,56 @@
                             <li class="nav-item">
                                 <a href="{{ route('roster') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Roster</p>
+                                <p>Tunjangan</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="../index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Lembur</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Cuti</p>
+                                <p>Asuransi</p>
                                 </a>
                             </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-edit"></i>
+                            <p>
+                                Company Remuneration
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('roster') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Insentif</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index3.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bonus</p>
+                                </a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-signal"></i>
+                            <p>
+                                KPI
+                            </p>
+                            </a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-graduation-cap"></i>
+                            <p>
+                                Training
+                            </p>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link">
@@ -322,6 +430,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         @yield('content')
+        @yield('importExel')
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>

@@ -31,7 +31,7 @@
                 <i class="fas fa-table me-1"></i>
                     DataTable Example
                 <div class="">
-                    <a href="{{ route('divisi.create') }}" class="btn btn-success">Tambah Data</a>
+                    <a href="{{ route('PosttambahDivisi') }}" class="btn btn-success">Tambah Data</a>
                 </div>
             </div>
             <div class="card-body">
@@ -56,7 +56,7 @@
                                         <span class="js-lists-values-email">{{$divisi->jumlah}}</span>
                                     </td>
                                     <td style="width: 10px;" align="center" >
-                                    <a href="{{ route('divisi.edit', $divisi->id) }}" >
+                                    <a href="" >
                                         <span class="icon">
                                             <i class="fas fa-pencil-alt"></i> <!-- Icon pensil (pencil) -->
                                         </span>

@@ -23,8 +23,9 @@
             <div class="card-header">
                 <h4 class="card-title">Divisi</h4>
             </div>
+            @foreach($detail_divisi as $detail_divisi)
             <div class="card-body">
-                <form action="{{route('tambahDivisi')}}" method="post">
+                <form action="{{route('divisi.update')}}" method="post">
                 @csrf
                     <div class="container-fluid px-4">
                         <div class="row">
@@ -33,15 +34,15 @@
                             </div>
                             <div class="col-md-8">
                                 <label class="col-form-label form-label">ID DIVISI</label>
-                                <input  name="divisi_id" type="text" class="form-control" required>
+                                <input  name="divisi_id" value="{{$detail_divisi->divisi_id}}" type="text" class="form-control" required>
                             </div>
                             <div class="col-md-8">
                                 <label class="col-form-label form-label">NAMA DIVISI</label>
-                                <input  name="name_divisi" type="text" class="form-control" required>
+                                <input  name="name_divisi" value="{{$detail_divisi->name_divisi}}" type="text" class="form-control" required>
                             </div>
                             <div class="col-md-8">
                                 <label class="col-form-label form-label">JUMLAH DIVISI</label>
-                                <input  name="jumlah" type="text" class="form-control" required>
+                                <input  name="jumlah" value="{{$detail_divisi->jumlah}}" type="text" class="form-control" required>
                             </div><br>
                             <div class="col-md-8">
                                 <label></label>
@@ -53,6 +54,7 @@
                     </div>
                 </form>
             </div>
+            @endforeach
         </div>
     </section>
 </div>

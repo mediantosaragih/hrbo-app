@@ -9,7 +9,7 @@ use DB;
 use App\Models\Divisi;
 
 
-class DivisiController extends Controller
+class DivisiControllers extends Controller
 {
     //
 
@@ -28,7 +28,7 @@ class DivisiController extends Controller
         ], compact('title'));
     }
 
-    public function Create(Request $request){
+    public function tambahDivisi(Request $request){
         $data_divisi = $request->only([
             'id',
             'divisi_id',
@@ -39,6 +39,12 @@ class DivisiController extends Controller
         Divisi::create($data_divisi);
 
         return redirect('divisi');
+    }
+
+    public function edit($id){
+        $detail_divisi = Divisi::where('id', $id)->get();
+        
+        return view('main/divisi/detail')->with('detail_divisi', $detail_divisi);
     }
 
     // public function DetailDataKaryawan($general_karyawan_id){
