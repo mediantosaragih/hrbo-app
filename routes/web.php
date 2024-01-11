@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\RosterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,13 +53,24 @@ Route::middleware(['auth'])->group(function () {
         return view('main/employee/tambah_data');
     })->name('tambah_data');
 
-    Route::get('/divisi', 'App\Http\Controllers\DivisiController@DataDivisi')->name('divisi');
+    // Route::get('/divisi', 'App\Http\Controllers\DivisiController@index')->name('divisi');
+    // Route::post('/create', 'App\Http\Controllers\DivisiController@Create')->name('divisi.create');
+
+    Route::get('divisi', [DivisiController::class, 'index'])->name('divisi');
+    Route::get('divisi/create', [DivisiController::class, 'create'])->name('divisi.create');
+    Route::post('divisi', [DivisiController::class, 'store'])->name('divisi.store');
+    Route::get('divisi/{id}/edit', [DivisiController::class, 'edit'])->name('divisi.edit');
+    Route::put('divisi/{id}', [DivisiController::class, 'update'])->name('divisi.update');
+    Route::delete('divisi/{id}', [DivisiController::class, 'destroy'])->name('divisi.destroy');
 
     Route::get('/sallary', 'App\Http\Controllers\SallaryController@DataSallary')->name('sallary');
 
-    Route::get('/roster', function () {
-        return view('main/roster/roster');
-    })->name('roster');
+    Route::get('/roster', [RosterController::class, 'index'])->name('roster');
+    Route::get('/events', [RosterController::class, 'getEvents']);
+    Route::delete('/roster/{id}', [RosterController::class, 'deleteEvent']);
+    Route::put('/roster/{id}', [RosterController::class, 'update']);
+    Route::put('/roster/{id}/resize', [RosterController::class, 'resize']);
+    Route::get('/events/search', [RosterController::class, 'search']);
 
     Route::get('/attendance', function () {
         return view('main/attendance/attendance');
