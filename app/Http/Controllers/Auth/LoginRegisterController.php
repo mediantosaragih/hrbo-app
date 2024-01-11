@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+use DB;
+use App\Models\Employee;
+
 
 class LoginRegisterController extends Controller
 {
@@ -99,15 +102,19 @@ class LoginRegisterController extends Controller
      */
     public function dashboard()
     {
+        $data_karyawan = DB::table('general')->orderBy('general_karyawan_id', 'asc')->get();
+
         if(Auth::check())
         {
-            return view('main/dashboard/dashboard');
+            return view('main/dashboard/dashboard', ['data_karyawan' => $data_karyawan]);
         }
         
         return redirect()->route('login')
             ->withErrors([
             'email' => 'Please login to access the dashboard.',
         ])->onlyInput('email');
+
+
     } 
     
     /**

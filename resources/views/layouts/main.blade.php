@@ -105,10 +105,10 @@
                 </div>
             </footer>
             <!-- End of Footer -->
- 
+            @yield('importExel')
         </div>
         <!-- End of Content Wrapper -->
-        @yield('importExel')
+ 
     </div>
     <!-- End of Page Wrapper -->
  
