@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard</h1>
+                    <h1 class="m-0">Divisi</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+                        <li class="breadcrumb-item active">Divisi</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,18 +28,17 @@
         
         <div class="card shadow mb-4">
             <div class="card-header mb-2">
-                <i class="fas fa-table me-1"></i>
-                    DataTable Example
                 <div class="">
                     <a href="{{ route('PosttambahDivisi') }}" class="btn btn-success">Tambah Data</a>
                 </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="example1" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>ID Divisi</th>
                                 <th>Nama Divisi</th>
                                 <th>Jumlah</th>
                                 <th>Action</th>
@@ -50,18 +49,21 @@
                             <tr style="">
                                 <td>{{$loop->iteration}}</td>
                                     <td style="">
+                                        <span class="js-lists-values-nama">{{$divisi->divisi_id}}</span>
+                                    </td>
+                                    <td style="">
                                         <span class="js-lists-values-nama">{{$divisi->name_divisi}}</span>
                                     </td>
                                     <td style="">
                                         <span class="js-lists-values-email">{{$divisi->jumlah}}</span>
                                     </td>
                                     <td style="width: 10px;" align="center" >
-                                    <a href="" >
+                                    <a href="./detail/{{$divisi->name_divisi}}">
                                         <span class="icon">
                                             <i class="fas fa-pencil-alt"></i> <!-- Icon pensil (pencil) -->
                                         </span>
                                         </a>
-                                        <a href="">
+                                        <a href="./hapusDivisi/{{$divisi->name_divisi}}">
                                             <span class="icon">
                                                 <i class="fas fa-trash-alt"></i> <!-- Icon tong sampah (trash) -->
                                             </span>

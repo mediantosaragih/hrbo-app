@@ -41,10 +41,33 @@ class DivisiControllers extends Controller
         return redirect('divisi');
     }
 
-    public function edit($id){
-        $detail_divisi = Divisi::where('id', $id)->get();
+    public function edit($name_divisi){
+        $detail_divisi = Divisi::where('name_divisi', $name_divisi)->get();
         
         return view('main/divisi/detail')->with('detail_divisi', $detail_divisi);
+    }
+
+    public function update(Request $request){
+        $data_divisi = $request->only([
+            'id',
+            'divisi_id',
+            'name_divisi',
+            'jumlah',
+        ]);
+
+        DB::table('general_divisi')->where('name_divisi', $data_divisi['name_divisi'])->update($data_divisi);
+        
+        return redirect('divisi');
+
+    }
+
+    public function destroy(Request $request)
+    {
+        $name_divisi = $request -> name_divisi;
+
+        DB::table('general_divisi')->where('name_divisi', $name_divisi)->delete();
+        
+        return redirect('divisi');
     }
 
     // public function DetailDataKaryawan($general_karyawan_id){

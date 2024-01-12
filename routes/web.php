@@ -28,8 +28,9 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
-    Route::post('/logout', 'logout')->name('logout');
+    Route::get('/logout', 'logout')->name('logout');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/home', 'dashboard')->name('dashboard');
     Route::get('/login/google', 'redirectToGoogle')->name('redirectToGoogle');
     Route::get('/login/google/callback', 'handleGoogleCallback')->name('handleGoogleCallback');
 
@@ -67,11 +68,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/divisi/tambah_divisi', function () {
         return view('main/divisi/create');
     })->name('tambahDivisi');
+    // Route::get('/detail', function () {
+    //     return view('main/divisi/detail');
+    // })->name('details');
     // Route::post('/divisi/tambah_divisi', 'App\Http\Controllers\DivisiControllers@tambahDivisi')->name('PosttambahDivisi');
     Route::post('divisi', [DivisiControllers::class, 'store'])->name('divisi.store');
-    Route::get('/detail/{name_divisi}', [DivisiControllers::class, 'edit'])->name('divisi.edit');
-    Route::put('divisi/{id}', [DivisiControllers::class, 'update'])->name('divisi.update');
-    Route::delete('divisi/{id}', [DivisiControllers::class, 'destroy'])->name('divisi.destroy');
+    Route::get('/detail/{name_divisi}', [DivisiControllers::class, 'edit'])->name('details');
+    Route::post('editDivisi', [DivisiControllers::class, 'update'])->name('divisi.update');
+    Route::get('hapusDivisi/{name_divisi}', [DivisiControllers::class, 'destroy'])->name('divisi.destroy');
 
     Route::get('/sallary', 'App\Http\Controllers\SallaryController@DataSallary')->name('sallary');
 

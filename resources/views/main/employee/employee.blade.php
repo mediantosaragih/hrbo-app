@@ -31,12 +31,12 @@
                             <a style="color:white">|</a>
                             <a class="btn btn-success" data-toggle="modal" data-target="#ImportExcel" class="btn btn-outline-secondary">Import Data</a> 
                             <a style="color:white">|</a>
-                            <a href="{{ route('tambah_data') }}" class="btn btn-success">Export Data</a>
+                            <a href="{{ route('tambah_data') }}"  class="btn btn-success">Export Data</a>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="example1" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>No</th>
